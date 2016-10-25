@@ -13,5 +13,10 @@
   
   :components ((:module "src"
 			:components ((:file "package")
+				     (:file "misc")
+				     (:file "web")
+				     (:file "wcn")
+				     (:file "job-listing")
+				     (:file "search")
 				     (:file "main")))))
 
