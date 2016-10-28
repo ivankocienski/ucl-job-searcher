@@ -9,7 +9,8 @@
 	       :cxml
 	       :css-selectors
 	       :cl-ppcre
-	       :split-sequence)
+	       :split-sequence
+	       :local-time)
   
   :components ((:module "src"
 			:components ((:file "package")

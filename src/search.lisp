@@ -19,7 +19,7 @@
     (make-job-listing :title      (node-value anchor)
 		      :link       (dom:get-attribute anchor "href")
 		      :department (node-value department)
-		      :ends-at    (node-value ends-at))))
+		      :ends-at    (date-parse (node-value ends-at)))))
 
 (defun extract-search-results (body)
   (with-dom (result-dom body)

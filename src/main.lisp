@@ -9,6 +9,10 @@
 
       (fetch-search-pages job-listings cookie-jar)
 
+      (sort job-listings (lambda (x y)
+			   (local-time:timestamp> (job-listing-ends-at x)
+						  (job-listing-ends-at y))))
+      
       (dolist (job job-listings)
 	(let ((counts (count-words *interesting-keywords* (extract-text job))))
 	  (when (> (hash-table-count counts) 0)
