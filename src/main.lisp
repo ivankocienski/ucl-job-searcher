@@ -1,6 +1,6 @@
 (in-package :ucl-job-search)
 
-(defparameter *interesting-keywords* '("ruby" "python" "java" "c++" "library"))
+(defparameter *interesting-keywords* '("ruby" "python" "java" "c++" "library" "lisp"))
 
 (defun pull-interesting-listings ()
   (with-cookie-jar (cookie-jar)
@@ -22,7 +22,8 @@
 	    (format t "    ends : ~a~%" (job-listing-ends-at job))
 	    (format t "keywords : ~{~a ~}~%" (loop for key being the hash-keys of counts
 						collect (format nil "~a(~d)" key
-								(gethash key counts))))))))))
+								(gethash key counts))))
+	    (format t "    link : ~a~%" (job-listing-link job))))))))
 
 (defun main ()
   (pull-interesting-listings))
